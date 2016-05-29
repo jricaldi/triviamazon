@@ -37,19 +37,19 @@ Template.game.onRendered(() => {
 			}
 			obj.push(145);
 				switch(parseInt(obtenidos[i].clase)) {
-			    	case 0:
-			        obj.push("mamalia");
-			        break;
 			    	case 1:
+			        obj.push("mammalia");
+			        break;
+			    	case 2:
 			        obj.push("aves");
 			        break;
-			        case 2:
+			        case 3:
 			        obj.push("reptilia");
 			        break;
-			        case 3:
+			        case 4:
 			        obj.push("amphibia");
 			        break;
-			        case 4:
+			        case 5:
 			        obj.push("insecta");
 			        break;
 			}
@@ -109,7 +109,8 @@ Template.game.onRendered(() => {
 	});
 	//Next
 	$(document).on("click","#trivia .next",function() {
-
+		var animal = _.flatten(_.sample(Animal.find().fetch(), 1));
+		Session.set("animal", (animal)[0]);
 	});
 	//Popup close
 	// $("#popupNext .close").click(function() {
@@ -125,7 +126,7 @@ Template.game.helpers({
 	return imagen;
   },
   countName: () => {
-  	var animal = _.flatten(_.sample(Animal.find().fetch(), 1))
+  	var animal = _.flatten(_.sample(Animal.find().fetch(), 1));
   	Session.set("animal", (animal)[0]);
   	var nombre = ((Session.get("animal")).nombre).toUpperCase().split('');
   	for (var i = nombre.length - 1; i >= 0; i--) {
@@ -133,6 +134,7 @@ Template.game.helpers({
   			nombre[i] = '.';
   	}
   	Session.set("nombre", nombre.join(''));
+  	nombre = _.shuffle(nombre);
   	return nombre;
   },
   detalle: () => {
