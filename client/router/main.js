@@ -32,7 +32,7 @@ Router.configure({
 // Router.plugin('dataNotFound', {notFoundTemplate: 'sinDatos'});
 
 Router.route('/',{
-  name:'login',
+  name:'game',
   controller: 'LoginController',
 
 });
