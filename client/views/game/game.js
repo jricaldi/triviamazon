@@ -134,7 +134,7 @@ Template.game.helpers({
   			nombre[i] = '.';
   	}
   	Session.set("nombre", nombre.join(''));
-  	// nombre = _.shuffle(nombre);
+  	nombre = _.shuffle(nombre);
   	return nombre;
   },
   detalle: () => {
