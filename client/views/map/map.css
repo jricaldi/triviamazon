@@ -7,6 +7,7 @@ html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+*/
 html, body {
   height: 100%;
   line-height: 1;
@@ -14,7 +15,7 @@ html, body {
 
 strong {
   font-weight: 600;
-}*/
+}
 
 /****************
   View Two
@@ -247,7 +248,7 @@ strong {
 #viewTwo #filter_the_map {
   background: #f1f1f1;
   border: 2px solid #00355f;
-  margin-top: 120px;
+  margin-top: 0px;
   margin-left: 20px;
   width: 275px;
   padding: 30px;
@@ -336,7 +337,7 @@ strong {
 
 @media (max-height: 700px) {
   #viewTwo #filter_the_map {
-    margin-top: 80px;
+    margin-top: 0px;
     padding: 20px;
   }
   #viewTwo #filter_the_map label.parent {
@@ -422,6 +423,7 @@ strong {
   position: inherit; 
   left: unset; 
   visibility: unset; 
+  margin-right: 5px;
 }
 
 .modal {
@@ -431,3 +433,16 @@ strong {
   height: 100% !important;
   padding: 0px;
 }
+.modal .modal-content {
+  height: 100%;
+  padding: 0px;
+}
+.modal-close {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 999999;
+    background: white none repeat scroll 0% 0%;
+    padding: 16px;
+    font-size: 20px;
+  }

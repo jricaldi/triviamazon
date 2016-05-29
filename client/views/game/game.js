@@ -54,6 +54,7 @@ Template.game.onRendered(() => {
 	$("#popupNext .close").click(function() {
 		$("#popupNext").hide();
 	}); 
+
 	},1500)
 });
 
