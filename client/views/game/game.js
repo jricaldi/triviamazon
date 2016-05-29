@@ -1,4 +1,5 @@
 Template.game.onRendered(() => {
+	console.log(Session.get("animalTest"))
 	function resetWord() {
 		$("#word li").removeClass("typed")
 			.text(".")
@@ -39,4 +40,23 @@ Template.game.onRendered(() => {
 	$("#popupNext .close").click(function() {
 		$("#popupNext").hide();
 	}); 
+});
+
+Template.game.helpers({
+  animal: function() {
+  	var animal = _.flatten(_.sample(Animal.find().fetch(), 1));
+	return animal;
+  },
+  countName: () => {
+  	var animal = _.flatten(_.sample(Animal.find().fetch(), 1))
+  	Session.set("animal", animal);
+  	var nombre = ((Session.get("animal")))[0].nombre.split('');
+  	for (var i = nombre.length - 1; i >= 0; i--) {
+  		if (nombre[i] === ' ')
+  			nombre[i] = '.';
+  	}
+  	console.log(nombre);
+  	return nombre;
+  },
+
 });
