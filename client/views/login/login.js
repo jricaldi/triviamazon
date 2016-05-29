@@ -373,8 +373,7 @@ var aaaaa = function() {
     	var height = marker[6];
     	var image = marker[8];
     	var content = '<img class="infoImage" src="animals/'+ image+'"/><h2 class="infoTitle">' + marker[1] + '</h2>'
-	    				+ '<p class="infoDesc">' + marker[2] + '</p>'
-	    				+ '<a href="../map/'+ convertToSlug('movies-in-' + marker[8]) + '" class="infoButton">Ver Info</a>';
+	    				+ '<p class="infoDesc">' + marker[2] + '</p>';
 	  
 	  	infoReference.infoBubble[id] = new InfoBubble({
 	      content: content,
