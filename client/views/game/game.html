@@ -1,7 +1,7 @@
 <template name="game">
 	<div id="trivia" class="noselect">
 		<div class="col s12 m6">
-			<h2>Adivina el Animal</h2>
+			<h2>Decifra el Animal</h2>
 			<div id="animal_img"><img src="animals/{{imagen}}"/></div>
 		</div>
 		{{#unless detalle}}
@@ -36,7 +36,7 @@
 					<p>{{amenaza}}</p>
 					<button id="seguir" class="btn">Seguir!</button>
 					<a id="fbShare" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://triviamazon.herokuapp.com', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');" href="#">Compartir en Facebook</a><br>
-					<a href="http://spda.org">Ayúdanos a salvar a este animal</a>
+					<a href="http://spda.org" target="_blank">Ayúdanos a salvar a este animal</a>
 				</div>
 				
 			{{/with}}
