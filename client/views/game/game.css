@@ -47,9 +47,10 @@
 	}*/
 	#trivia h2 {
 		font-weight: 600;
+		font-size: 3em;
 	}
 	#trivia .navigation {
-		max-width: 80%;
+		width: 280px;
 		margin: auto;
 	}
 	#trivia .next {
@@ -59,7 +60,7 @@
 		float: right;
 		border-radius: 2px;
 		height: 30px;
-		padding-top: 3px;
+		padding-top: 6px;
 		box-sizing: border-box;
 		cursor: pointer;
 	}
@@ -70,7 +71,7 @@
 		float: left;
 		border-radius: 2px;
 		height: 30px;
-		padding-top: 3px;
+		padding-top: 6px;
 		box-sizing: border-box;
 		cursor: pointer;
 	}
@@ -79,7 +80,7 @@
 		padding: 0px;
 		margin-left: auto;
 		margin-right: auto;
-
+		margin-top: 50px;
 	}
 	#word li {
 		margin-bottom: 10px;
@@ -101,7 +102,7 @@
 		margin: auto;
 	}
 	#animal_img img {
-		width: 100%;
+		width: 80%;
 	}
 	#keyboard {
 		padding: 0px;

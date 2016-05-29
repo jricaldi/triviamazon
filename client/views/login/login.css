@@ -1,7 +1,7 @@
 #login-buttons{
     background-color: #2e7d32;
     padding: 10px 20px;
-    border-radius: 5px
+    border-radius: 0px
 }
 
 #login-buttons a.login-link-text{
@@ -12,4 +12,12 @@
 #principal{
 	background: url('bg2.jpg');
 	padding-bottom: 30px;
+}
+#login-buttons .login-close-text {
+	text-decoration: none;
+	text-align: center;
+	width: 100%;
+}
+#principal .header {
+	background: white;
 }
