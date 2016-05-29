@@ -1,9 +1,7 @@
 Template.map.onRendered(() => {
 	jQuery(document).ready(function($){
-	//set your google maps parameters
-	$("#modalVerLogros").leanModal({
-	    ready: function() { setTimeout(function(){ $(window).resize(); }, 500); },
-	});
+	setTimeout(function() {
+	
 	var latitude = -20,
 		longitude = -60;
 	function map_zoom() {
@@ -151,7 +149,7 @@ Template.map.onRendered(() => {
 								.change(filterMarkers);
 	//google map custom marker icon - .png fallback for IE11
 	var is_internetExplorer11= navigator.userAgent.toLowerCase().indexOf('trident') > -1;
-	var marker_url = ( is_internetExplorer11 ) ? '../img/cd-icon-location.png' : '../img/cd-icon-location.png';
+	var marker_url = ( is_internetExplorer11 ) ? 'cd-icon-location.png' : 'cd-icon-location.png';
 		
 	//define the basic color of your map, plus a value for saturation and brightness
 	var	main_color = '#0D6C91',
@@ -484,5 +482,6 @@ Template.map.onRendered(() => {
 	jQuery.getJSON('http://opensharecount.com/count.json?url=http://expediablog.co.uk/world-on-screen/', function (data) {
 	    jQuery('#twitter-url-shares').text(data.count);
 	});
+}, 2000);
 });
 });

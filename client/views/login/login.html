@@ -1,16 +1,14 @@
 <template name="login">	
 	<div class="container">
 		<div id="principal">
-			
 			<div class="{{#unless currentUser}} loginContainer{{/unless}} {{#if currentUser}} gameContainer {{/if}} row row z-depth-3">			
-
 				<div class="col s12 header">
 					<div class="right">
 						{{> loginButtons}}
 					</div>
 					{{#if currentUser}}
 						<div class="left">
-							<a  href="#modalVerLogros" id="verLogros" class="waves-effect waves-light btn modal-trigger">Ver mis logros</a>
+							<a href="#modalVerLogros" id="verLogros" class="waves-effect waves-light btn modal-trigger">Ver mis logros</a>
 						</div>
 					{{/if}}
 				</div>

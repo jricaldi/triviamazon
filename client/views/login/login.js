@@ -3,5 +3,13 @@ Template.login.onCreated(() => {
 });
 
 Template.login.onRendered(() => {
-	$('.modal-trigger').leanModal();
+	console.log("ssss");
+	setTimeout(function() {
+		$('.modal-trigger').leanModal({
+		    ready: function() { console.log("qaa"); setTimeout(function(){ 
+		    	$(window).trigger("resize"); 
+		    }, 1500); },
+		});
+	}, 2000);
+
 });
