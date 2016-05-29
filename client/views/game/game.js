@@ -15,7 +15,7 @@ Template.game.onRendered(() => {
 				$(this).addClass("used");
 				$("#word li").not(".typed").first()
 					.addClass("typed")
-					.data("num", $(this).data("num") )
+					.attr("data-num", $(this).attr("data-num") )
 					.text(texto);
 			}
 		}					
@@ -23,8 +23,11 @@ Template.game.onRendered(() => {
 	//Erase letter
 	$("#word li").click(function() {
 		$(this).removeClass("typed").text(".");
-		var num = $(this).data("num");
+		var num = $(this).attr("data-num");
+		console.log(num);		
+		
 		$("#keyboard .input" + num).removeClass("used");
+		$(this).attr("data-num", "");
 	});	
 	//Reset
 	$("#trivia .reset").click(function() {

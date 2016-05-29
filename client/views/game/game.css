@@ -7,6 +7,10 @@
 	  user-select: none;           /* Non-prefixed version, currently
 	                                  not supported by any browser */
 	}
+	#principal .gameContainer {
+		background: url('bg2.jpg');
+		padding-bottom: 30px;
+	}
 	.clearfix {
 		clear: both;
 	}
@@ -60,7 +64,7 @@
 		float: right;
 		border-radius: 2px;
 		height: 30px;
-		padding-top: 6px;
+		padding-top: 4px;
 		box-sizing: border-box;
 		cursor: pointer;
 	}
@@ -71,7 +75,7 @@
 		float: left;
 		border-radius: 2px;
 		height: 30px;
-		padding-top: 6px;
+		padding-top: 4px;
 		box-sizing: border-box;
 		cursor: pointer;
 	}

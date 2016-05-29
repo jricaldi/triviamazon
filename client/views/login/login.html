@@ -1,24 +1,33 @@
-<template name="login">
+<template name="login">	
 	<div class="container">
-		<div class="row z-depth-3" id="principal">
-			<div class="col s12 header">
-				<div class="right">
-					{{> loginButtons}}
+		<div id="principal">
+			
+			<div class="{{#unless currentUser}} loginContainer{{/unless}} {{#if currentUser}} gameContainer {{/if}} row row z-depth-3">			
+
+				<div class="col s12 header">
+					<div class="right">
+						{{> loginButtons}}
+					</div>
+					{{#if currentUser}}
+						<div class="left">
+							<a  href="#modalVerLogros" id="verLogros" class="waves-effect waves-light btn modal-trigger">Ver mis logros</a>
+						</div>
+					{{/if}}
 				</div>
-				<div class="left">
-					<a  href="#modalVerLogros" id="verLogros" class="waves-effect waves-light btn modal-trigger">Ver mis logros</a>
-				</div>
+			 	{{#unless currentUser}}
+					<div class=" col s12 center">
+						<img src="logo.png"/>
+						<h2>¿Cómo jugar?</h2>
+						<p>Primero, debes registrarte con tu cuenta de Facebook. En seguida te aparecerá tu primer reto que consiste en decifrar el nombre de un animal de nuestra amazonia. </p>
+						<p>Con cada animal que decifres se te otorgarán puntos además de poder visualizar información relevante sobre el animal salvaje en cuestión como por ejemplo un mapa donde podrás distinguir su hábitat. Recuerda que puedes compartir en tu muro de Facebook todos tus logros.</p>
+					</div>
+				{{/unless}}
+				{{#if currentUser}}
+					<div class=" col s12 center">
+						{{> game}}
+					</div>
+				{{/if}}
 			</div>
-		 	{{#unless currentUser}}
-				<div class=" col s12 center">
-					landing page
-				</div>
-			{{/unless}}
-			{{#if currentUser}}
-				<div class=" col s12 center">
-					{{> game}}
-				</div>
-			{{/if}}
 		</div>
 	</div>
 	{{> modalVerLogros}}
