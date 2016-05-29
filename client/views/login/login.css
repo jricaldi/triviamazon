@@ -1,0 +1,10 @@
+#login-buttons{
+    background-color: #235000;
+    padding: 10px 20px;
+    border-radius: 20px
+}
+
+#login-buttons a.login-link-text{
+	text-decoration: initial;
+	color: white;
+}

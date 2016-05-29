@@ -1,3 +1,19 @@
 <template name="login">
-	main login
+	<div class="container ">
+		<div class="row white">
+			<div class="col s12">
+				<div class="right">
+					{{> loginButtons}}
+				</div>
+			</div>
+		 	{{#unless currentUser}}
+				<div class="s12 center">
+					landing page
+				</div>
+			{{/unless}}
+		</div>
+		{{#if currentUser}}
+			{{> game}}
+		{{/if}}
+	</div>
 </template>
