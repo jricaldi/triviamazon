@@ -18,11 +18,11 @@
 	body {
 		background: url(bg.jpg);
 		background-size: cover;
-		width: 100%;
+/*		width: 100%;
 		height: 100%;
-		padding: 0px;
-		overflow: hidden;
-		margin: 0px;
+		padding: 0px;*/
+		/*overflow: hidden;*/
+		/*margin: 0px;*/
 	}	
 	#login {
 		color: rgb(51, 51, 51);
@@ -39,12 +39,12 @@
 		margin-top: -250px;
 		box-shadow: rgba(50,50,50,0.8);
 	}
-	#trivia {
+	/*#trivia {
 		background: rgb(250, 250, 250) none repeat scroll 0% 0%;
 		max-width: 500px;
 		text-align: center;
 		padding: 20px;
-	}
+	}*/
 	#trivia h2 {
 		font-weight: 600;
 	}
