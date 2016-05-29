@@ -6,7 +6,7 @@
 					{{> loginButtons}}
 				</div>
 				<div class="left">
-					<button id="verLogros">Ver mis logros</button>
+					<a  href="#modalVerLogros" id="verLogros" class="waves-effect waves-light btn modal-trigger">Ver mis logros</a>
 				</div>
 			</div>
 		 	{{#unless currentUser}}
@@ -21,4 +21,5 @@
 			{{/if}}
 		</div>
 	</div>
+	{{> modalVerLogros}}
 </template>

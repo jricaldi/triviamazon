@@ -1,4 +1,4 @@
-*, *:after, *:before {
+/**, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -14,13 +14,13 @@ html, body {
 
 strong {
   font-weight: 600;
-}
+}*/
 
 /****************
   View Two
 ****************/
 #viewTwo {
-  height: 100%;
+  height: 650px;
   min-height: 600px;
 }
 #viewTwo .socialLinks {
@@ -362,7 +362,7 @@ strong {
     View Two
   ****************/
   #viewTwo {
-    min-height: 495px;
+    /*min-height: 495px;*/
   }
   #viewTwo #titleViewTwoContainer {
     height: 75px;
@@ -416,4 +416,16 @@ strong {
   #viewTwo #filter_the_map .containerSearch {
     display: none;
   }
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked{
+  position: inherit; 
+  left: unset; 
+  visibility: unset; 
+}
+
+.modal {
+  max-height: 100% !important;
+  width: 100% !important;
+  top: 0% !important;
 }

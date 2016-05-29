@@ -3,5 +3,5 @@ Template.login.onCreated(() => {
 });
 
 Template.login.onRendered(() => {
-	
+	$('.modal-trigger').leanModal();
 });
