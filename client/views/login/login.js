@@ -1,7 +1,3 @@
-Template.login.onCreated(() => {
-	Session.set("test",3);
-});
-
 var aaaaa = function() {
 	
 	var latitude = -20,
@@ -26,38 +22,40 @@ var aaaaa = function() {
 	var gmarkers1 = [];
 	var markers1 = [];
 	// Our markers
-	markers1 = [
-	    ['0', 'Ghostbusters', 'New York', 40.689184, -74.044586, 'extinta', 115, 'mammalia'],	    
-	    ['1', 'Scott Pilgrim v.s. The World', 'Toronto', 43.656049, -79.392591, 'extinta-silvestre', 130, 'mammalia'],
-	    ['2', 'Twin Peaks', 'Washington State', 47.495050, -121.786895, 'peligro-critico', 130, 'mammalia'],
-	    ['3', 'Back to the Future', 'Los Angeles', 34.073760, -117.551828, 'extinta', 130, 'mammalia'],
-	    ['4', 'The Hateful Eight', 'Colorado', 38.959364, -105.673996, 'peligro-critico', 130, 'reptilia'],
-	    ['5', 'Fear and Loathing in Las Vegas', 'Las Vegas', 35.998443, -115.193645, 'extinta-silvestre', 145, 'reptilia'],
+	console.log(Session.get("listaObtenidos"));
+	markers1 = Session.get("listaObtenidos");
+	// markers1 = [
+	//     ['0', 'Ghostbusters', 'New York', 40.689184, -74.044586, 'extinta', 115, 'mammalia'],	    
+	//     ['1', 'Scott Pilgrim v.s. The World', 'Toronto', 43.656049, -79.392591, 'extinta-silvestre', 130, 'mammalia'],
+	//     ['2', 'Twin Peaks', 'Washington State', 47.495050, -121.786895, 'peligro-critico', 130, 'mammalia'],
+	//     ['3', 'Back to the Future', 'Los Angeles', 34.073760, -117.551828, 'extinta', 130, 'mammalia'],
+	//     ['4', 'The Hateful Eight', 'Colorado', 38.959364, -105.673996, 'peligro-critico', 130, 'reptilia'],
+	//     ['5', 'Fear and Loathing in Las Vegas', 'Las Vegas', 35.998443, -115.193645, 'extinta-silvestre', 145, 'reptilia'],
 	    
-	    ['6', 'City of God', 'Rio de Janeiro', -22.916978, -43.188847, 'peligro-critico', 115, 'mammalia'],
-	    ['7', 'The Motorcycle Diaries', 'Buenos Aires to Caracas', -37.074275, -57.046577, 'peligro-critico', 145, 'reptilia'],
+	//     ['6', 'City of God', 'Rio de Janeiro', -22.916978, -43.188847, 'peligro-critico', 115, 'mammalia'],
+	//     ['7', 'The Motorcycle Diaries', 'Buenos Aires to Caracas', -37.074275, -57.046577, 'peligro-critico', 145, 'reptilia'],
 	    
-	    ['8', 'Sherlock', 'London', 51.523850, -0.158621, 'peligro-critico', 115, 'mammalia'],
-	    ['9', 'Doctor Who', 'Cardiff', 51.459601, -3.160501, 'extinta', 115, 'mammalia'],
-	    ['10', 'Game of Thrones', 'Europe', 55.134749, -6.380690, 'peligro-extincion', 130, 'aves'],
+	//     ['8', 'Sherlock', 'London', 51.523850, -0.158621, 'peligro-critico', 115, 'mammalia'],
+	//     ['9', 'Doctor Who', 'Cardiff', 51.459601, -3.160501, 'extinta', 115, 'mammalia'],
+	//     ['10', 'Game of Thrones', 'Europe', 55.134749, -6.380690, 'peligro-extincion', 130, 'aves'],
 	    
-	    ['11', 'Star Wars: The Force Awakens', 'Lake District', 54.684365, -3.233232, 'extinta', 130, 'aves'],
-	    ['12', 'Midnight in Paris', 'Paris', 48.858356, 2.294471, 'extinta-silvestre', 115, 'mammalia'],
-	    ['13', 'Run Lola Run', 'Berlin', 52.521377, 13.385320, 'casi-amenazada', 115, 'mammalia'],
-	    ['14', 'The Danish Girl', 'Copenhagen', 55.667219, 12.571010, 'casi-amenazada', 115, 'mammalia'],
-	    ['15', 'War and Peace', 'The Baltic Region', 59.922655, 30.293444, 'peligro-extincion', 130, 'reptilia'],
+	//     ['11', 'Star Wars: The Force Awakens', 'Lake District', 54.684365, -3.233232, 'extinta', 130, 'aves'],
+	//     ['12', 'Midnight in Paris', 'Paris', 48.858356, 2.294471, 'extinta-silvestre', 115, 'mammalia'],
+	//     ['13', 'Run Lola Run', 'Berlin', 52.521377, 13.385320, 'casi-amenazada', 115, 'mammalia'],
+	//     ['14', 'The Danish Girl', 'Copenhagen', 55.667219, 12.571010, 'casi-amenazada', 115, 'mammalia'],
+	//     ['15', 'War and Peace', 'The Baltic Region', 59.922655, 30.293444, 'peligro-extincion', 130, 'reptilia'],
 	    
-	    ['16', 'Lord of the Rings Trilogy', 'New Zealand', -41.894021, 173.489618, 'vulnerable', 130, 'aves'],
-	    ['17', 'Finding Nemo', 'East Australian Coast', -16.540126, 145.486195, 'vulnerable', 130, 'amphibia'],
+	//     ['16', 'Lord of the Rings Trilogy', 'New Zealand', -41.894021, 173.489618, 'vulnerable', 130, 'aves'],
+	//     ['17', 'Finding Nemo', 'East Australian Coast', -16.540126, 145.486195, 'vulnerable', 130, 'amphibia'],
 	   
-	    ['18', 'Sense8', 'Mumbai', 19.071815, 72.878445, 'peligro-extincion', 115, 'mammalia'],
-	    ['19', 'Apocalypse Now', 'Philippines / Vietnam', 12.349496, 123.418140, 'preocupacion-menor', 130, 'amphibia'],
-	    ['20', 'Kill Bill', 'Tokyo', 35.708317, 139.732192, 'preocupacion-menor', 115, 'mammalia'],
-	    ['21', 'Lara Croft: Tomb Raider', 'Cambodia', 11.571225, 104.928655, 'vulnerable', 130, 'aves'],
-	    ['22', 'Mad Max: Fury Road', 'Namibia', -22.518532, 17.072431, 'preocupacion-menor', 130, 'aves'],
-	    ['23', 'Spectre', 'Tangier', 35.755448, -5.833038, 'vulnerable', 115, 'mammalia'],
-	    ['24', 'Mandela: Long Walk To Freedom', 'South Africa', -33.935148, 18.418463, 'peligro-critico', 145, 'reptilia'],
-	];
+	//     ['18', 'Sense8', 'Mumbai', 19.071815, 72.878445, 'peligro-extincion', 115, 'mammalia'],
+	//     ['19', 'Apocalypse Now', 'Philippines / Vietnam', 12.349496, 123.418140, 'preocupacion-menor', 130, 'amphibia'],
+	//     ['20', 'Kill Bill', 'Tokyo', 35.708317, 139.732192, 'preocupacion-menor', 115, 'mammalia'],
+	//     ['21', 'Lara Croft: Tomb Raider', 'Cambodia', 11.571225, 104.928655, 'vulnerable', 130, 'aves'],
+	//     ['22', 'Mad Max: Fury Road', 'Namibia', -22.518532, 17.072431, 'preocupacion-menor', 130, 'aves'],
+	//     ['23', 'Spectre', 'Tangier', 35.755448, -5.833038, 'vulnerable', 115, 'mammalia'],
+	//     ['24', 'Mandela: Long Walk To Freedom', 'South Africa', -33.935148, 18.418463, 'peligro-critico', 145, 'reptilia'],
+	// ];
 	/**
 	 * Function to add marker to map
 	 */
@@ -368,11 +366,13 @@ var aaaaa = function() {
 	        .replace(/[^\w-]+/g,'')
 	        ;
 	}
+	console.log(markers1);
 	for (i = 0; i < markers1.length; i++) {		
     	marker = markers1[i];
     	var id = marker[0];
     	var height = marker[6];
-    	var content = '<img class="infoImage" src="../img/icons/icon' + id + '.png"/><h2 class="infoTitle">' + marker[1] + '</h2>'
+    	var image = marker[8];
+    	var content = '<img class="infoImage" src="animals/'+ image+'"/><h2 class="infoTitle">' + marker[1] + '</h2>'
 	    				+ '<p class="infoDesc">' + marker[2] + '</p>'
 	    				+ '<a href="../map/'+ convertToSlug('movies-in-' + marker[8]) + '" class="infoButton">Ver Info</a>';
 	  
@@ -485,6 +485,7 @@ var aaaaa = function() {
 	    jQuery('#twitter-url-shares').text(data.count);
 	});
 }
+
 Template.login.onRendered(() => {
 	
 	setTimeout(function() {

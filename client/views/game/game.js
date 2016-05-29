@@ -1,4 +1,65 @@
 Template.game.onRendered(() => {
+	var obtenidos = Animal.find().fetch();
+		console.log(obtenidos);
+		var _result = [];
+		for (var i = obtenidos.length - 1; i >= 0; i--) {
+			var obj = [];
+			obj.push(i);
+			obj.push(obtenidos[i].nombre);
+			obj.push(obtenidos[i].nombreCientefico);
+			obj.push(obtenidos[i].Latitud);
+			obj.push(obtenidos[i].Longitud);
+			switch(parseInt(obtenidos[i].estado)) {
+			    	case 0:
+			        obj.push("sin-peligro-actual");
+			        break;
+			    	case 1:
+			        obj.push("preocupacion-menor");
+			        break;
+			        case 2:
+			        obj.push("casi-amenazada");
+			        break;
+			        case 3:
+			        obj.push("vulnerable");
+			        break;
+			        case 4:
+			        obj.push("peligro-extincion");
+			        break;
+			        case 5:
+			        obj.push("peligro-critico");
+			        break;
+			        case 6:
+			        obj.push("extinta-silvestre");
+			        break;
+			        case 7:
+			        obj.push("extinta");
+			        break;
+			}
+			obj.push(145);
+				switch(parseInt(obtenidos[i].clase)) {
+			    	case 0:
+			        obj.push("mamalia");
+			        break;
+			    	case 1:
+			        obj.push("aves");
+			        break;
+			        case 2:
+			        obj.push("reptilia");
+			        break;
+			        case 3:
+			        obj.push("amphibia");
+			        break;
+			        case 4:
+			        obj.push("insecta");
+			        break;
+			}
+			obj.push(obtenidos[i].imagen)
+			_result.push(obj);
+		}
+		console.log(_result);
+		Session.set("listaObtenidos", _result);
+
+
 	setTimeout( () => {
 	function resetWord() {
 		$("#word li").removeClass("typed")
@@ -9,7 +70,7 @@ Template.game.onRendered(() => {
 		$("#keyboard li").removeClass("used");
 	}
 	//Type letter		
-	$("#keyboard li").click(function() {
+	$(document).on("click", "#keyboard li", function() {
 		if ($("#word li").not(".typed").length > 0){
 			if (!$(this).hasClass("used")) {
 				var texto = $(this).text();
@@ -30,10 +91,10 @@ Template.game.onRendered(() => {
 					console.log("holaaa" + Session.get("detalle"));
 				}
 			}
-		} 				
+		}		
 	});
 	//Erase letter
-	$("#word li").click(function() {
+	$(document).on("click","#word li", function() {
 		$(this).removeClass("typed").text(".");
 		var num = $(this).attr("data-num");
 		console.log(num);		
@@ -42,18 +103,18 @@ Template.game.onRendered(() => {
 		$(this).attr("data-num", "");
 	});	
 	//Reset
-	$("#trivia .reset").click(function() {
+	$(document).on("click","#trivia .reset",function() {
 		resetKeyboard();
 		resetWord();
 	});
 	//Next
-	$("#trivia .next").click(function() {
-		$("#popupNext").show();
+	$(document).on("click","#trivia .next",function() {
+
 	});
 	//Popup close
-	$("#popupNext .close").click(function() {
-		$("#popupNext").hide();
-	}); 
+	// $("#popupNext .close").click(function() {
+	// 	$("#popupNext").hide();
+	// }); 
 
 	},1500)
 });
