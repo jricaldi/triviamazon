@@ -8,10 +8,21 @@
 	text-decoration: initial;
 	color: white;
 }
-
-#principal{
-	background: url('bg2.jpg');
+#principal .loginContainer {
+	background: rgba(0, 0, 0, 0.8) none repeat scroll 0% 0%;
+	color: white;
+	max-width: 700px;
+	height: 100%;
+	padding-bottom: 100px;
+	margin: auto;
 	padding-bottom: 30px;
+}
+#principal h2 {
+	font-size: 3em;
+}
+#principal p {
+	padding-left: 20px;
+	padding-right: 20px;
 }
 #login-buttons .login-close-text {
 	text-decoration: none;
@@ -20,4 +31,11 @@
 }
 #principal .header {
 	background: white;
+}
+#verLogros {
+	background-color: #2e7d32;
+	padding: 10px 20px;
+	border-radius: 0px;
+	padding-top: 0px;
+	box-shadow: none;
 }
