@@ -1,5 +1,5 @@
 Template.game.onRendered(() => {
-	console.log(Session.get("animalTest"))
+	setTimeout( () => {
 	function resetWord() {
 		$("#word li").removeClass("typed")
 			.text(".")
@@ -19,7 +19,18 @@ Template.game.onRendered(() => {
 					.attr("data-num", $(this).attr("data-num") )
 					.text(texto);
 			}
-		}					
+			if ($("#word li").not(".typed").length == 0){
+				var texto = "";
+				$("#word").find("li").each(function(){
+					texto = texto + $(this).text();
+				});
+				console.log("jeojeojo"+ Session.get("nombre"));
+				if(texto === Session.get("nombre")){
+					Session.set("detalle",true);
+					console.log("holaaa" + Session.get("detalle"));
+				}
+			}
+		} 				
 	});
 	//Erase letter
 	$("#word li").click(function() {
@@ -43,23 +54,35 @@ Template.game.onRendered(() => {
 	$("#popupNext .close").click(function() {
 		$("#popupNext").hide();
 	}); 
+	},1500)
 });
 
 Template.game.helpers({
-  animal: function() {
-  	var animal = _.flatten(_.sample(Animal.find().fetch(), 1));
-	return animal;
+  imagen: function() {
+  	var imagen = (Session.get("animal")).imagen;
+	return imagen;
   },
   countName: () => {
   	var animal = _.flatten(_.sample(Animal.find().fetch(), 1))
-  	Session.set("animal", animal);
-  	var nombre = ((Session.get("animal")))[0].nombre.split('');
+  	Session.set("animal", (animal)[0]);
+  	var nombre = ((Session.get("animal")).nombre).toUpperCase().split('');
   	for (var i = nombre.length - 1; i >= 0; i--) {
   		if (nombre[i] === ' ')
   			nombre[i] = '.';
   	}
-  	console.log(nombre);
+  	Session.set("nombre", nombre.join(''));
   	return nombre;
   },
+  detalle: () => {
+  	return Session.get("detalle");
+  },
+  animal : () => {
+  	return Session.get("animal");
+  }
+});
 
+Template.game.events({
+	"click #seguir" : () => {
+		Session.set("detalle",false)
+	}
 });

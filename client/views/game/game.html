@@ -1,11 +1,10 @@
 <template name="game">
 	<div id="trivia" class="noselect">
-	<!-- {{#each animal}}
-	{{/each}} -->
 		<div class="col s12 m6">
 			<h2>Adivina el Animal</h2>
-			<div id="animal_img"><img src="http://a1.dspncdn.com/media/692x/80/e8/78/80e878da2963e18ebc58c1a19c1d0c1e.jpg"/></div>
+			<div id="animal_img"><img src="animals/{{imagen}}"/></div>
 		</div>
+		{{#unless detalle}}
 		<div class="col s12 m6">
 			<ul id="word">
 			{{#each countName}}
@@ -23,5 +22,15 @@
 				<div class="clearfix"></div>	
 			</div>
 		</div>
+		{{/unless}}
+		{{#if detalle}}
+			{{#with animal}}
+				<div class="col s12 m6">
+					{{nombre}}
+					{{nombreCientefico}}
+					<button id="seguir" class="btn">Seguir!</button>
+				</div>
+			{{/with}}
+		{{/if}}
 	</div>
 </template>
