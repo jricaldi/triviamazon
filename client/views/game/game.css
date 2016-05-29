@@ -20,6 +20,7 @@
 	#principal .gameContainer {
 		background: url('bg2.jpg');
 		padding-bottom: 30px;
+		border-radius:15px;
 	}
 	.clearfix {
 		clear: both;
@@ -120,6 +121,7 @@
 	}
 	#animal_img img {
 		width: 80%;
+		border-radius: 5px;
 	}
 	#keyboard {
 		padding: 0px;
@@ -141,11 +143,14 @@
 		box-sizing: border-box;
 		cursor: pointer;
 		border-radius: 2px;
+		border: 1px solid #333;
 	}
 	#keyboard li.used {
 		cursor: auto;
 		background: #AAA;
 		color: #333;
+		font-weight: bolder;
+		border:1px solid gray;
 	}
 	#popupNext {
 		position: fixed;
@@ -194,3 +199,8 @@
 		box-sizing: border-box;
 		float: right;
 	}
+
+.botonesLetras:hover{
+	background-color: #171313 !important;
+	color: white !important;
+}

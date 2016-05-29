@@ -1,7 +1,7 @@
 #login-buttons{
     background-color: #2e7d32;
     padding: 10px 20px;
-    border-radius: 0px
+    border-radius: 5px
 }
 
 #login-buttons a.login-link-text{
@@ -30,7 +30,8 @@
 	width: 100%;
 }
 #principal .header {
-	background: white;
+	margin-top: 20px;
+	background: transparent;
 }
 #verLogros {
 	background-color: #2e7d32;
@@ -38,6 +39,7 @@
 	border-radius: 0px;
 	padding-top: 0px;
 	box-shadow: none;
+	border-radius: 5px;
 }
 #login-dropdown-list {
 	left: -113px;

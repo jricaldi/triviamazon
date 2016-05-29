@@ -2,7 +2,10 @@
 	<div id="trivia" class="noselect">
 		<div class="col s12 m6">
 			<h2>Descifra el Animal</h2>
-			<div id="animal_img"><img src="animals/{{imagen}}"/></div>
+			<div id="animal_img"><img src="animals/{{imagen}}" class="z-depth-3"/></div>
+			<div class="center">
+				<h4 class="brown-text"><b>Puntaje: {{puntaje}}</b></h4>
+			</div>
 		</div>
 		{{#unless detalle}}
 		<div class="col s12 m6">
@@ -13,7 +16,7 @@
 			</ul>
 			<ul id="keyboard">
 				{{#each countName}}
-					<li data-num={{@index}} class="input{{@index}}">{{this}}</li>
+					<li data-num={{@index}} class="input{{@index}} botonesLetras">{{this}}</li>
 				{{/each}}
 			</ul>
 			<div class="navigation">			
@@ -38,8 +41,8 @@
 						<button id="seguir" class="btn">Seguir!</button>
 						<a id="fbShare" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://triviamazon.herokuapp.com', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');" href="#">Compartir en Facebook</a><br>
 					</div>
-					<div class="col s12 center">
-						<a href="http://spda.org" target="_blank">Ayúdanos a salvar a este animal</a>
+					<div class="col s12 center" style="margin-top:30px;">
+						<a href="http://spda.org" target="_blank"><b>Ayúdanos a salvar a este animal</b></a>
 					</div>
 				</div>
 				

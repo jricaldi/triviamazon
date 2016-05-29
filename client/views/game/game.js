@@ -53,7 +53,7 @@ Template.game.onRendered(() => {
 			        obj.push("insecta");
 			        break;
 			}
-			obj.push(obtenidos[i].imagen)
+			obj.push(obtenidos[i].imagen);
 			_result.push(obj);
 		}
 		console.log(_result);
@@ -85,10 +85,10 @@ Template.game.onRendered(() => {
 				$("#word").find("li").each(function(){
 					texto = texto + $(this).text();
 				});
-				console.log("jeojeojo"+ Session.get("nombre"));
 				if(texto === Session.get("nombre")){
 					Session.set("detalle",true);
-					console.log("holaaa" + Session.get("detalle"));
+					console.log("holaaa " + Meteor.userId());
+					Point.upsert({_id: Meteor.userId()},{$inc : {store : 5}})
 				}
 			}
 		}		
@@ -134,7 +134,7 @@ Template.game.helpers({
   			nombre[i] = '.';
   	}
   	Session.set("nombre", nombre.join(''));
-  	nombre = _.shuffle(nombre);
+  	// nombre = _.shuffle(nombre);
   	return nombre;
   },
   detalle: () => {
@@ -142,7 +142,11 @@ Template.game.helpers({
   },
   animal : () => {
   	return Session.get("animal");
-  }
+  },
+  puntaje: () => {
+  	var el = Point.find({_id: Meteor.userId()}).fetch();
+  	return el[0].store;
+  },
 });
 
 Template.game.events({
