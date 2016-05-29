@@ -1,6 +1,9 @@
 Template.map.onRendered(() => {
 	jQuery(document).ready(function($){
 	//set your google maps parameters
+	$("#modalVerLogros").leanModal({
+	    ready: function() { setTimeout(function(){ $(window).resize(); }, 500); },
+	});
 	var latitude = -20,
 		longitude = -60;
 	function map_zoom() {
