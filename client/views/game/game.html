@@ -26,11 +26,17 @@
 		{{#if detalle}}
 			{{#with animal}}
 				<div class="col s12 m6">
-					{{nombre}}
-					{{nombreCientefico}}
+					<h4>Nombre:</h4>
+					<p>{{nombre}}</p>
+					<h4> Nombre Científico: </h4>
+					<p>{{nombreCientefico}}</p>
+					<h4> Descripción :</h4>
+					<p>{{descripcion}}</p>
+					<h4> Amenazas: </h4>
+					<p>{{Amenazas}}</p>
 					<button id="seguir" class="btn">Seguir!</button>
 				</div>
-				<a onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://triviamazon.herokuapp.com', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');" href="#"><img alt="facebook" src="../img/fb.png"/></a>
+				<a id="fbShare" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://triviamazon.herokuapp.com', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');" href="#"><img alt="facebook" src="../img/fb.png"/></a>
 			{{/with}}
 		{{/if}}
 	</div>

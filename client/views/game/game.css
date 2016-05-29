@@ -1,3 +1,9 @@
+	#fbShare {
+		background: #3b5998;
+		color: white;
+		height: 40px;
+		width: 150px;
+	}
 	.noselect {
 	  -webkit-touch-callout: none; /* iOS Safari */
 	  -webkit-user-select: none;   /* Chrome/Safari/Opera */
