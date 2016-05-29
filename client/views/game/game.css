@@ -71,7 +71,7 @@
 		margin: auto;
 	}
 	#trivia .next {
-		background: rgb(68, 136, 68) none repeat scroll 0% 0%;
+		background: #2e7d32 none repeat scroll 0% 0%;
 		color: white;
 		width: 120px;
 		float: right;
@@ -82,7 +82,7 @@
 		cursor: pointer;
 	}
 	#trivia .reset {
-		background: rgb(68, 136, 68) none repeat scroll 0% 0%;
+		background: #2e7d32 none repeat scroll 0% 0%;
 		color: white;
 		width: 120px;
 		float: left;
